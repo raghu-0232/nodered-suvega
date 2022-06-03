@@ -11,4 +11,4 @@ spec:
     - name: autotrips
       port: 3000
       targetPort: 1880
-      nodePort: 31207
+      nodePort: 31208
