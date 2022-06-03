@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ct-data-2-deployment
+  namespace: nodered
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ct-data-2
+  template:
+    metadata: # Dictionary
+      name: ct-data-2-pod
+      labels: # Dictionary
+        app: ct-data-2
+    spec:
+      containers: # List
+        - name: ct-data-2
+          image: raghu0232/bgr-deployment:ct_data_2
+          ports:
+            - containerPort: 1880
