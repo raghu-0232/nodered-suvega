@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: labs-deployment
+  namespace: nodered
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: labs
+  template:
+    metadata: # Dictionary
+      name: labs-pod
+      labels: # Dictionary
+        app: labs
+    spec:
+      containers: # List
+        - name: labs-container
+          image: raghu0232/suvega:labs
+          ports:
+            - containerPort: 1880
