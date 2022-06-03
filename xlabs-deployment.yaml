@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xlabs-deployment
+  namespace: nodered
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: xlabs
+  template:
+    metadata: # Dictionary
+      name: xlabs-pod
+      labels: # Dictionary
+        app: xlabs
+    spec:
+      containers: # List
+        - name: xlabs-container
+          image: raghu0232/suvega:x-labs
+          ports:
+            - containerPort: 1880
