@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autotrips-deployment
+  namespace: nodered
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autotrips
+  template:
+    metadata: # Dictionary
+      name: autotrips-pod
+      labels: # Dictionary
+        app: autotrips
+    spec:
+      containers: # List
+        - name: autotrips
+          image: raghu0232/bgr-deployment:autotrips
+          ports:
+            - containerPort: 1880
