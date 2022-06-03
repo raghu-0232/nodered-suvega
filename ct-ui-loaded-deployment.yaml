@@ -17,6 +17,6 @@ spec:
     spec:
       containers: # List
         - name: ct-ui-loaded
-          image: raghu0232/bgr-deployment:ct-ui-loaded
+          image: raghu0232/bgr-deployment:ct_ui_loaded
           ports:
             - containerPort: 1880
