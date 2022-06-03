@@ -12,7 +12,3 @@ spec:
       port: 5000
       targetPort: 1883
       nodePort: 31207
-    - name: tcp
-      port: 5001
-      targetPort: 1880
-      nodePort: 31209
