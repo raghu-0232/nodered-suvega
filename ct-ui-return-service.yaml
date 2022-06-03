@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ct-ui-return-nodeport-service
+  namespace: nodered
+spec:
+  type: NodePort
+  selector:
+    app: ct-ui-return
+  ports:
+    - name: ct-ui-return
+      port: 3004
+      targetPort: 1880
+      nodePort: 31204
