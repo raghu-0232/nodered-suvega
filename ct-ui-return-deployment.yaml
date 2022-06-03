@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ct-ui-return-deployment
+  namespace: nodered
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ct-ui-return
+  template:
+    metadata: # Dictionary
+      name: ct-ui-return-pod
+      labels: # Dictionary
+        app: ct-ui-return
+    spec:
+      containers: # List
+        - name: ct-ui-return
+          image: raghu0232/bgr-deployment:ct_ui_return
+          ports:
+            - containerPort: 1880
