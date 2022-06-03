@@ -20,3 +20,6 @@ spec:
           image: raghu0232/bgr-deployment:mqtt
           ports:
             - containerPort: 1883
+              name: mqtt
+            - containerPort: 1880
+              name: nodered
