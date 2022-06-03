@@ -14,4 +14,4 @@ spec:
       nodePort: 31207
     - name: nodered
       port: 5001
-      tagetPort: 1880
+      targetPort: 1880
