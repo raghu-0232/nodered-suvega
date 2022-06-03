@@ -9,6 +9,6 @@ spec:
     app: ct-map-return
   ports:
     - name: ct-map-return
-      port: 3004
+      port: 3001
       targetPort: 1880
       nodePort: 31206
