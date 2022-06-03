@@ -19,4 +19,4 @@ spec:
         - name: mqtt
           image: raghu0232/bgr-deployment:mqtt
           ports:
-            - containerPort: 1883
+            - containerPort: 1880
