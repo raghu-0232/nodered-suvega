@@ -11,4 +11,4 @@ spec:
     - name: mqtt
       port: 5000
       targetPort: 1880
-      nodePort: 31206
+      nodePort: 31207
