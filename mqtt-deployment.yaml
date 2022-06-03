@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mqtt-deployment
+  namespace: nodered
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mqtt
+  template:
+    metadata: # Dictionary
+      name: mqtt-pod
+      labels: # Dictionary
+        app: mqtt
+    spec:
+      containers: # List
+        - name: mqtt
+          image: raghu0232/bgr-deployment:mqtt
+          ports:
+            - containerPort: 1880
