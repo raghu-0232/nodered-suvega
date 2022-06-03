@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ct-map-return-deployment
+  namespace: nodered
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ct-map-return
+  template:
+    metadata: # Dictionary
+      name: ct-map-return-pod
+      labels: # Dictionary
+        app: ct-map-return
+    spec:
+      containers: # List
+        - name: ct-map-return
+          image: raghu0232/bgr-deployment:ct_map_return
+          ports:
+            - containerPort: 1880
