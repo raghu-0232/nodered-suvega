@@ -9,9 +9,9 @@ spec:
     app: mqtt
   ports:
     - name: mqtt
-      port: 5000
+      port: 1883
       targetPort: 1883
       nodePort: 31207
     - name: nodered
-      port: 5001
+      port: 1880
       targetPort: 1880
