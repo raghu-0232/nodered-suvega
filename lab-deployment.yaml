@@ -20,13 +20,3 @@ spec:
           image: raghu0232/suvega:labs
           ports:
             - containerPort: 1880
-          readinessProbe:
-            tcpSocket:
-              port: 1880
-            initialDelaySeconds: 5
-            periodSeconds: 10
-          livenessProbe:
-            tcpSocket:
-              port: 1880
-            initialDelaySeconds: 15
-            periodSeconds: 20
