@@ -20,11 +20,11 @@ spec:
           image: raghu0232/suvega:x-labs
           resources:
             requests:
-              memory: "500Mi"
+              memory: "200Mi"
               cpu: "250m"
             limits:
-              memory: "1000Mi"
-              cpu: "500m"
+              memory: "250Mi"
+              cpu: "300m"
           ports:
             - containerPort: 1880
           readinessProbe:
