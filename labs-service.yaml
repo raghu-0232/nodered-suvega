@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: labs-nodeport-service
+  name: lab-nodeport-service
   namespace: nodered
 spec:
   type: NodePort
