@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mqtt-service
+  name: mqtt
   namespace: nodered
 spec:
   type: NodePort
