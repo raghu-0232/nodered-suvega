@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ct-telegram-deployment
+  namespace: nodered
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ct-ui-loaded
+  template:
+    metadata: # Dictionary
+      name: ct-ui-loaded-pod
+      labels: # Dictionary
+        app: ct-ui-loaded
+    spec:
+      containers: # List
+        - name: ct-ui-loaded
+          image: raghu0232/bgr-deployment:ct_ui_loaded
+          ports:
+            - containerPort: 1880
