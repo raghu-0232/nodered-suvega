@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xlabs-deployment
+  namespace: nodered
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xlabs
+  template:
+    metadata: # Dictionary
+      name: xlabs-pod
+      labels: # Dictionary
+        app: xlabs
+    spec:
+      containers: # List
+        - name: xlabs-container
+          image: raghu0232/suvega:x-labs
+          resources:
+            requests:
+              memory: "200Mi"
+              cpu: "250m"
+            limits:
+              memory: "250Mi"
+              cpu: "300m"
+          ports:
+            - containerPort: 1880
+          readinessProbe:
+            tcpSocket:
+              port: 1880
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 1880
+            initialDelaySeconds: 15
+            periodSeconds: 20
